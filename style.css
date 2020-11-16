@@ -1,0 +1,148 @@
+.body{
+    height: 100%;
+    width: 100%;
+}
+.content-triangle{
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0);
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+    position: absolute;
+    animation-name:none;
+    animation-duration: 5000ms;
+    animation-timing-function: linear;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-fill-mode: none;
+    /*transition-duration: 1s;*/
+}
+.new-color-triangle{
+    border-bottom:100px solid #000;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    transition-duration: 2s;
+}
+
+/*.content-triangle:active{*/
+/*    animation-play-state: paused;*/
+/*}*/
+@keyframes triangle-way {
+    0%{
+        left: 0;
+        top: calc(100% - 100px);
+        opacity: 0;
+    }
+    5%{
+        opacity: 1;
+    }
+    100%{
+        left:calc(100% - 100px);
+        top: 0;
+        opacity: 1;
+    }
+}
+
+
+.content-circle{
+
+    border-radius: 50%;
+    background-color: greenyellow;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    animation-name:none;
+    animation-duration: 5000ms;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: none;
+    visibility: hidden;
+}
+@keyframes circle-way {
+    0%{
+        width:0;
+        height: 0;
+        visibility: visible;
+    }
+    100% {
+        width: 50%;
+        height: 100%;
+        visibility: visible;
+
+    }
+
+}
+/*.content-circle:active{*/
+/*    animation-play-state: paused;*/
+
+/*}*/
+.button{
+    border:none;
+    border-radius: 4px;
+    background-color: #25fff3;
+    font-family: "Times New Roman",serif;
+    text-transform: uppercase;
+    padding: 5px 0;
+    font-size: 14pt;
+    box-shadow: 0 2px 5px 2px #8F8F8F;
+    cursor: pointer;
+    width: 265px;
+}
+
+.button .char-triangle {
+    /*display: inline-block;*/
+    position: relative;
+    /*transition: 0.5s;*/
+}
+.char-triangle:after {
+    content: '\20E4';
+    position: absolute;
+    opacity: 0;
+    font-size: 14pt;
+}
+.button:hover{
+    background-color: #FF39C8;
+    color: #FFF;
+    transition-duration: 500ms;
+}
+.button:active{
+    background-color: #BD2F8C;
+    box-shadow: 0 1px 3px 1px #000;
+}
+.button:hover .char-triangle {
+    padding-right: 40px;
+}
+.button:hover .char-triangle:after {
+    opacity: 1;
+    right: 0;
+}
+.button:focus{
+    outline: none;
+    border: 1px solid #FFF;
+}
+
+.btn-triangle{
+    position: absolute;
+    margin: 10px;
+}
+.btn-stop-triangle{
+    position: absolute;
+    margin: 10px;
+    right:0;
+}
+.btn-change-color-triangle{
+    position: absolute;
+    margin: 10px;
+    bottom: 0;
+}
+.btn-circle{
+    position: absolute;
+    margin: 10px;
+    bottom: 0;
+    right: 0;
+}
